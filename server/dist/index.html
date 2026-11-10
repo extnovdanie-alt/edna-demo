@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>E.D.N.A. · Emitente de Declarações e Normas de Acordo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="meli.css">
+  <link rel="stylesheet" href="mascot.css">
+  <link rel="stylesheet" href="header-motion.css">
+  <link rel="stylesheet" href="experience.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="header-start">
+    <button id="toggleMenu" class="menu-toggle" type="button" aria-label="Recolher menu lateral" aria-controls="sidebar" aria-expanded="true" title="Recolher menu lateral" hidden><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <div class="brand" aria-label="Mercado Livre"><span class="meli-wordmark"><img src="assets/mercado-livre-logo@2x.png" alt="Mercado Livre" width="134" height="34"></span></div>
+    </div>
+    <div class="header-brand" aria-label="E.D.N.A. — Emitente de Declarações e Normas de Acordo">
+      <div class="header-name" aria-hidden="true"><span>E<span class="name-dot">.</span></span><span>D<span class="name-dot">.</span></span><span>N<span class="name-dot">.</span></span><span>A<span class="name-dot">.</span></span></div>
+      <span class="header-tagline">Seu portal de equipamentos</span>
+      <span class="header-edna" aria-hidden="true"><span class="header-edna-frame"><img src="assets/edna-ti-frente.png" alt="" width="220" height="120"></span></span>
+    </div>
+    <div id="identity"><span class="environment">Portal de TI</span></div>
+  </header>
+  <div class="shell">
+    <aside id="sidebar" class="sidebar" hidden>
+      <div class="sidebar-caption"><span class="workplace-dot"></span> TECNOLOGIA · MELI</div>
+      <nav id="navigation" aria-label="Navegação principal"></nav>
+      <div class="sidebar-bottom"><span class="status-dot"></span><div id="environmentNote">Ambiente de demonstração</div></div>
+    </aside>
+    <main id="app"><div class="loading" role="status">Carregando o portal…</div></main>
+  </div>
+  <dialog id="modal" aria-labelledby="modalTitle"></dialog>
+  <div id="toast" class="toast" hidden role="status"></div>
+  <script src="demo.js"></script>
+  <script src="app.js"></script>
+  <script src="header-motion.js"></script>
+</body>
+</html>

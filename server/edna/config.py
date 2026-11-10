@@ -1,0 +1,5 @@
+CATEGORIES = {'mouse': 'Mouse', 'teclado': 'Teclado', 'notebook': 'Notebook', 'ring_scanner': 'Ring scanner', 'handheld': 'Handheld', 'leitor_2d': 'Leitor 2D', 'impressora_zebra': 'Impressora Zebra'}
+
+OPTIONAL_SERIAL = {'mouse', 'teclado'}
+
+TEXT = {'responsabilidade': 'Declaro que recebi o equipamento identificado neste termo e os acessórios descritos, nas condições informadas. Comprometo-me a utilizá-lo exclusivamente em atividades autorizadas pela empresa, zelar por sua conservação, não cedê-lo a terceiros sem autorização e comunicar imediatamente perda, furto, defeito ou incidente de segurança à TI. Comprometo-me a devolvê-lo quando solicitado ou ao término do prazo de empréstimo. A devolução será registrada em termo próprio após conferência pela TI.', 'devolucao': 'Declaro que devolvi à equipe de TI o equipamento e os acessórios identificados neste termo. Confirmo as condições e observações de recebimento registradas pela TI. Este aceite registra a devolução descrita e encerra a atribuição deste equipamento.'}
