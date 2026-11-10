@@ -143,15 +143,35 @@ html{scroll-padding-top:calc(var(--edna-header-height) + 16px)}
 @media(max-width:360px){.topbar{padding:0 10px;gap:6px}.header-start{gap:6px}.meli-wordmark{min-width:72px}.meli-wordmark img{width:72px}.brand-mark{font-size:17px}.brand-dot{width:19px;height:19px;min-width:19px}.brand-dot img{width:98px}.menu-toggle{width:30px;min-width:30px}.header-edna-frame{width:33px;height:33px}.header-edna-frame img{width:179px}}
 @media(prefers-reduced-motion:reduce){.topbar,.meli-wordmark img{transition:none}.meli-wordmark:hover img{transform:none}.welcome-art img,.header-edna{will-change:auto}.welcome-art img{transform:none}.header-edna{transform:translate(-50%,-50%)}}
 
+/* O nome permanece centralizado; a mascote só entra com a rolagem. */
+.header-brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:3px;color:#2d3277;isolation:isolate}
+.header-name{display:flex;align-items:baseline;font-size:28px;font-weight:850;line-height:1;letter-spacing:-1.2px;transform:translateY(calc(var(--edna-progress)*1px));transition:letter-spacing .4s ease}
+.header-name>span{display:inline-block;animation:edna-name-arrive .65s cubic-bezier(.2,.8,.2,1) both}
+.header-name>span:nth-child(2){animation-delay:.055s}.header-name>span:nth-child(3){animation-delay:.11s}.header-name>span:nth-child(4){animation-delay:.165s}
+.name-dot{color:#3483fa;display:inline-block;margin-right:1px}
+.header-name:after{content:"";position:absolute;left:5%;right:5%;bottom:-4px;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,#3483fa88,transparent);transform:scaleX(calc(.55 + var(--edna-progress)*.45));opacity:calc(.2 + var(--edna-progress)*.45)}
+.header-brand:hover .header-name{letter-spacing:.2px}.header-tagline{font-size:8px;line-height:1.2;letter-spacing:.3px;margin-top:3px;opacity:calc(.75 - var(--edna-progress)*.15)}
+.header-brand .header-edna{left:calc(100% + 12px);top:50%;display:block;transform:translate3d(calc((1 - var(--edna-progress))*-10px),-50%,0) scale(calc(.84 + var(--edna-progress)*.16));opacity:var(--edna-portrait-opacity)}
+.header-brand .header-edna-frame{width:39px;height:39px}.header-brand .header-edna-frame img{width:210px;top:-5px}
+@keyframes edna-name-arrive{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:850px){.header-name{font-size:26px}}
+@media(max-width:650px){.header-name{font-size:22px;letter-spacing:-1px}.header-tagline{display:none}.header-brand .header-edna{left:calc(100% + 6px)}.header-brand .header-edna-frame{width:27px;height:27px;border-width:1px}.header-brand .header-edna-frame img{width:148px;top:-3px}.topbar .meli-wordmark{min-width:70px}.topbar .meli-wordmark img{width:70px}.header-start{gap:7px}}
+@media(max-width:360px){.header-name{font-size:20px}.header-start{gap:5px}.topbar .meli-wordmark{min-width:62px}.topbar .meli-wordmark img{width:62px}.header-brand .header-edna{left:calc(100% + 4px)}.header-brand .header-edna-frame{width:24px;height:24px}.header-brand .header-edna-frame img{width:132px}}
+@media(prefers-reduced-motion:reduce){.header-name,.header-name>span{animation:none;transition:none}.header-brand .header-edna{transform:translateY(-50%)}}
+
 </style>
 </head>
 <body>
   <header class="topbar">
     <div class="header-start">
     <button id="toggleMenu" class="menu-toggle" type="button" aria-label="Recolher menu lateral" aria-controls="sidebar" aria-expanded="true" title="Recolher menu lateral" hidden><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-    <div class="brand" aria-label="Mercado Livre · E.D.N.A., Emitente de Declarações e Normas de Acordo"><span class="meli-wordmark"><img data-artwork="mercado-livre-logo@2x.png" alt="Mercado Livre" width="134" height="34"></span><span class="brand-divider"></span><div class="brand-caption"><span class="brand-mark">E.D.N.A<span class="brand-dot" title="Nossa mascote"><img data-artwork="edna-ti-frente.png" alt="Edna" width="132" height="72"></span></span><span class="brand-purpose">Seu portal de equipamentos</span></div></div>
+    <div class="brand" aria-label="Mercado Livre"><span class="meli-wordmark"><img data-artwork="mercado-livre-logo@2x.png" alt="Mercado Livre" width="134" height="34"></span></div>
     </div>
-    <div class="header-edna" aria-hidden="true"><span class="header-edna-frame"><img data-artwork="edna-ti-frente.png" alt="" width="220" height="120"></span><span class="header-edna-caption">E.D.N.A.</span></div>
+    <div class="header-brand" aria-label="E.D.N.A. — Emitente de Declarações e Normas de Acordo">
+      <div class="header-name" aria-hidden="true"><span>E<span class="name-dot">.</span></span><span>D<span class="name-dot">.</span></span><span>N<span class="name-dot">.</span></span><span>A<span class="name-dot">.</span></span></div>
+      <span class="header-tagline">Seu portal de equipamentos</span>
+      <span class="header-edna" aria-hidden="true"><span class="header-edna-frame"><img data-artwork="edna-ti-frente.png" alt="" width="220" height="120"></span></span>
+    </div>
     <div id="identity"><span class="environment">Portal de TI</span></div>
   </header>
   <div class="shell">
